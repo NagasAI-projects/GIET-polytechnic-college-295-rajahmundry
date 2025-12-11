@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>GIET Polytechnic College</title>
+
+  <style>
+    /* --- base --- */
+    body{font-family:Arial, sans-serif;margin:0;background:#f5f7fa;color:#333}
+    header{background:#004080;color:#fff;padding:16px 20px}
+    header h1{margin:0;font-size:24px}
+    nav{margin-top:8px}
+    display:flex;
+    justify-content:space-between;
+    nav a{color:#fff;text-decoration:none;margin-right:14px}
+    nav a:hover{text-decoration:underline}
+
+    section{max-width:900px;margin:auto;padding:20px}
+    h2{color:#004080;margin-top:24px}
+    p{line-height:1.6;font-size:18px}
+    .image-container{text-align:center;margin:18px 0}
+    .image-container1 img{max-width:100%;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.2)}
+
+    /* --- gallery grid --- */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .gallery-grid img{
+      width:100%; height:200px; object-fit:cover;
+      border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.18);
+      cursor:zoom-in;
+    }
+
+    /* --- lightbox --- */
+    .lightbox{
+      display:none; position:fixed; inset:0; z-index:1000;
+      background:rgba(0,0,0,.9); padding:40px 20px;
+    }
+    .lightbox.open{display:flex;align-items:center;justify-content:center;flex-direction:column}
+    .lightbox img{
+      max-width:90vw; max-height:75vh; border-radius:12px;
+    }
+    .caption{color:#ccc;margin-top:10px;text-align:center}
+    .close, .prev, .next{
+      position:fixed; top:18px; font-size:32px; color:#fff; cursor:pointer; user-select:none
+    }
+    .close{right:24px}
+    .prev{left:24px; top:50%; transform:translateY(-50%)}
+    .next{right:24px; top:50%; transform:translateY(-50%)}
+    
+    footer { background:linear-gradient(45deg,#141E30,#243B55); color:white;
+    
+/* Footer Social Icons Container */
+.social-footer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+  }
+
+/* All Icons Size & Transition */
+.social-footer i {
+  font-size: 20px;
+  transition: 0.3s;
+  color: white;  /* Normal color (black or white) */
+}
+
+/* Instagram Hover */
+.insta-icon:hover i {
+  color: transparent;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134AF, #515BD4);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Facebook Hover */
+.fb-icon:hover i {
+  color: #1877F2; /* Facebook Blue */
+}
+
+/* WhatsApp Hover */
+.wa-icon:hover i {
+  color: #25D366; /* WhatsApp Green */
+}
+  </style>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+ <img src="giet2.jpeg" width="400" hieght="200">
+  <header>
+    <nav>
+   <a href="index.html">Home</a>
+   <a href="departments.html">Departments</a>
+   <a href="Class.html">About</a></nav></header>
+  </header>
+
+  
+    <h3>About Our College</h3>
+    <div class="image-container1">
+      <!-- Use your local file (giet.jpeg) or keep this demo URL -->
+      <img src="giet.jpeg" alt="College Campus">
+    </div>
+   <section><strong>GIET Polytechnic    College is a private institution located in Rajahmundry,Andhra Pradesh,india.Established in 2009,it offers diploma courses in engineering and technology, with a total seat intake of 285 students.The college is affiliated with the Directorate of Technical Education, Andhra Praaadesh, and is accredited by AICTE.
+  Our College (2009) offers world-class engineering education in a serene campus
+      at Chaitanya Nagar, Rajahmundry on NH-16. The institution is ISO-certified, NBA-accredited,
+      and NAAC A-Grade.
+         To offer engineering education of world-class standards. Over the years, the college has come a long way to gain a place of repute and a preferred destination for quality engineering education. Located in the serene and sylvan suburbs of Chaitanya Nagar, Rajahmundry on NH-16, the sprawling 300-acre campus of GIET campus reflects the finest educational facilities around. The stately 5-storeyed structure set amid idyllic setting ensures a most congenial atmosphere for scholastic pursuit in right earnest. An ISO-certified,NBA-accredited and NAAC-A Grade accredited institution, GIET has many distinctions to its credit
+   </strong><br><br><mark>Admission Process:<br><p>Admission are entrance-based,and the college accepts students who have completed their 10th standard. The exact eligibility criteria and admission process.</p></mark><br><mark>College Campus :</mark><br><p>The college has a sprawling 300-acre campus with state-of-the-art facilities,including advanced laboratories and a Well-equipped Library. Students have access to world-class facilities, and the college provides a conducive environment for academic pursuits.</p><br><mark>Fee Structure:</mark><br><p>The fee structure varies depending on the courses, with some courses costing around 75,000 Per year However,fees can change different branch wise because,your consult the college.</p><br>
+  </section>
+
+  <section id="facilities">
+    <h3>Facilities</h3>
+    <div class="image-container1">
+      <img src="giet8.jpg" alt="College Library">
+    </div>
+    <i><ul>
+      <li>Well-equipped laboratories</li>
+      <li>Central library with thousands of books & e-journals</li>
+      <li>Sports & recreation facilities</li>
+      <li>Modern classrooms with smart boards</li>
+      <li>Transportation Facilities From around all Areas</li>
+      <li>Hostel & cafeteria</li></i>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h3>Gallery</h3>
+
+    <!-- Replace these demo URLs with your own files (e.g., giet5.jpeg, giet6.jpeg, giet7.jpg) -->
+    <div class="gallery-grid" id="galleryGrid">
+      <img src="giet5.jpeg" alt="Classroom">
+      <img src="6.jpg" alt="Engineering Lab">
+      <img src="giet7.jpg" alt="Sports Ground">
+      <img src="giet6.jpeg" alt="Computer Lab">
+      <img src="hostel.jpg" alt="Giet Hostels">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>More Details</h3>
+    <p>
+      📍 Giet Polytechnic College of Engineering, Rajahmundry, Andhra Pradesh<br>
+      📞 +918886660481<br>
+      <small>📧 gietpolytechnic295@gmail.com</small>
+    </p>
+  </section>
+
+           <footer>
+<!-- Social Icons -->
+<div class="social-footer">
+  <a class="insta-icon" href="https://www.instagram.com/ggu.ap?igsh=OGV0a3J1amNnZGRk">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a class="fb-icon" href="https://www.facebook.com/share/16ZdNzAVWt/" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a class="wa-icon" href=" https://whatsapp.com/channel/0029VatGxqC65yDCYVVuyq0L" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+<small>© ²⁰²⁵ ᴳᴵᴱᵀ ᴾᵒˡʸᵗᵉᶜʰⁿⁱᶜ ᶜᵒˡˡᵉᵍᵉ.  ᴬˡˡ ʳⁱᵍʰᵗˢ ʳᵉˢᵉʳᵛᵉᵈ.<br> ᴰᵉˢⁱⁿᵉᵈ & ᴰᵉᵛᵉˡᵒᵖᵉᵈ ᴮʸ&nbsp;&nbsp;&nbsp;</small><b style="color:red;">ᴺᵃᵍᵃ 𝐒ᴬᴵ</b>
+
+  </footer>
+
+  <!-- Lightbox HTML (popup) -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="btnClose" aria-label="Close">&times;</span>
+    <span class="prev" id="btnPrev" aria-label="Previous">&#10094;</span>
+    <img id="lightboxImg" alt="">
+    <div class="caption" id="lightboxCap"></div>
+    <span class="next" id="btnNext" aria-label="Next">&#10095;</span>
+  </div>
+
+  <script>
+    // --- Lightbox logic ---
+    const grid = document.getElementById('galleryGrid');
+    const imgs = Array.from(grid.querySelectorAll('img'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCap = document.getElementById('lightboxCap');
+    const btnClose = document.getElementById('btnClose');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    let idx = 0;
+
+    function openAt(i){
+      idx = i;
+      const img = imgs[idx];
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      lbCap.textContent = img.alt || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLB(){
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function prev(){ openAt((idx - 1 + imgs.length) % imgs.length); }
+    function next(){ openAt((idx + 1) % imgs.length); }
+
+    imgs.forEach((img, i)=> img.addEventListener('click', ()=> openAt(i)));
+    btnClose.addEventListener('click', closeLB);
+    btnPrev.addEventListener('click', (e)=>{ e.stopPropagation(); prev(); });
+    btnNext.addEventListener('click', (e)=>{ e.stopPropagation(); next(); });
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLB(); }); // click outside to close
+    window.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') closeLB();
+      if(e.key === 'ArrowLeft') prev();
+      if(e.key === 'ArrowRight') next();
+    });
+  </script>
+</body>
+</html>

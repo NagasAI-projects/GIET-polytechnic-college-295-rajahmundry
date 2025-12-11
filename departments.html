@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+ <html lang="en">
+  <head> 
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>Departments Of- GIET Polytechnic College</title> 
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+     <body>
+        <center><img src="giet2.jpeg" width="400" hieght="200"></center>
+    
+  
+  <!-- Toggle Menu Button -->
+  <nav><div class="menu-icon" onclick="openMenu()">☰ 
+   <a href="index.html"> Home</a>
+    <a href="departments.html">️ Departments</a>
+    <a href="Class.html">About</a>
+    </div></nav>
+  <!-- Sidebar Navigation -->
+  <div class="side-nav" id="sideNav">
+    <hr>
+    <a href="#our-departments" onclick="closeSidebar()"> Our Departments</a>
+<!-- 🔹 Departments Toggle (Click to Show List + Scroll) -->
+<section id="our-departments">
+<div class="departments-box" id="departmentsBox">
+  <ul class="department-list" id="deptList">
+    <li><a href="#AI">Artificial Intelligence</a></li>
+    <li><a href="#AM">Automobile Engineering</a></li>
+    <li><a href="#CCN">Computer Networking</a></li>
+    <li><a href="#CME">Computer Engineering</a></li>
+    <li><a href="#C">Civil Engineering</a></li>
+    <li><a href="#ECE">Electronics & Communication</a></li>
+    <li><a href="#EEE">Electrical & Electronics</a></li>
+    <li><a href="#ME">Mechanical Engineering</a></li>
+    <li><a href="#M">Mining Engineering</a></li>
+  </ul>
+</div></section>
+    
+    <a href="#faculty-list" onclick="closeSidebar()">Faculty List</a>
+    <a href="#quick-links" onclick="closeSidebar()">Quick Links</a>
+       <a href="#paper-box" onclick="closeSidebar()">Previous Papers</a>
+  </div>
+  
+         <section>
+         <!-- Courses Section -->
+    <section id="our-departments">
+      <h3>Our Departments :-</h3>
+      <marquee Scroll amount="30" direction="left">*Giet Polytechnic college are advanced Courses Teaching of  better knowledge Faculties and Improving Skills* </marquee>
+      <section class="courses-section">
+    <section id="AI"></section>
+    <div class="course-card" ondblclick="openPage('AI.html')">
+     <img src="ai.jpeg" alt="Artificial Intelligence">
+      <div class="overlay">
+        <h2> Artificial Intelligence</h2>
+        <p>Learn Coding, AI, Robotics and Machine Learning</p>
+      </div>
+    </div>
+    <section id="AM"></section>
+     <div class="course-card" ondblclick="openPage('AM.html')">
+      <img src="auto.jpeg" alt="Automobile Engineering">
+      <div class="overlay">
+   <h2>Automobile Engineering</h2>
+        <p>Focuses on Design, Development, Testing, Production, and Maintenance of Vehicles
+        </p>
+      </div>
+    </div>
+
+<section id="CCN"></section>
+ <div class="course-card" ondblclick="openPage('CCN.html')">
+      <img src="ccn.jpeg" alt="Computer Engineering">
+      <div class="overlay">
+        <h2>Computer Networking Engineering</h2>
+        <p>Study of How Computers and Devices Communicate Over Networks</p>
+      </div>
+    </div>
+
+<section id="CME"></section>
+    <div class="course-card" ondblclick="openPage('CME.html')">
+      <img src="cme.jpeg" alt="Computer Engineering">
+      <div class="overlay">
+        <h2>💻 Computer Engineering</h2>
+        <p>Learn Coding, web Applications and Backend connect</p>
+      </div>
+    </div>
+   
+   <section id="C"></section>
+    <div class="course-card" ondblclick="openPage('C.html')">
+      <img src="civil.jpg" alt="Civil Engineering">
+      <div class="overlay">
+        <h2>🏗️ Civil Engineering</h2>
+        <p>Build the Future with Strong Foundations</p>
+      </div>
+    </div>
+    
+    <section id="ECE"></section>
+<div class="course-card" ondblclick="openPage('ECE.html')">
+      <img src="ece.jpeg" alt="Electrical Engineering">
+      <div class="overlay">
+        <h2>Electrical Engineering</h2>
+        <p>Study and Application of Electricity, Electronics, and Electromagnetism</p>
+      </div>
+    </div>
+    
+    <section id="EEE"></section>
+    <div class="course-card" ondblclick="openPage('EEE.html')">
+      <img src="eee.jpeg" alt="Electronics Engineering">
+      <div class="overlay">
+        <h2>Electrical and Electronics Engineering</h2>
+        <p>Designing Electrical Circuits, Power Systems, and Electrical Equipments</p>
+      </div>
+    </div>
+    <section id="ME"></section>
+    <div class="course-card" ondblclick="openPage('ME.html')">
+      <img src="mech.jpeg" alt="Mechanical Engineering">
+      <div class="overlay">
+        <h2>⚙️ Mechanical Engineering</h2>
+        <p>Explore Machines, Design, and Automation</p>
+      </div>
+    </div>
+    <section id="M"></section>
+    <div class="course-card" ondblclick="openPage('M.html')">
+      <img src="min.jpeg" alt="Mining Engineering">
+      <div class="overlay">
+        <h2>Mining Engineering</h2>
+        <p> Geotechnics, Rock Mechanics and Mineral Processing</p>
+      </div>
+    </div>
+
+  </section>
+  <script>
+    function openPage(pageName) {
+      window.location.href = pageName;
+    }
+  </script>
+ 
+ <!-- Faculty Section -->
+    <h2 id="faculty-list">Department Wise Faculty List</h2>
+    
+<!-- Automobile Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+    Automobile Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>M.Manikanta</h3>
+      <p>HOD-Automobile</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>G.Somaraju</h3>
+      <p>Assistant Professor</p>
+    </div>
+    </div>
+    </div>
+
+<!-- Civil Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+     Civil Faculties    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>M.Ganesh Kumar</h3>
+      <p>HOD-Civil</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Naga Naresh</h3>
+      <p>Assistant Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Diya Sree</h3>
+      <p>Assistant Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Prathyusha</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 2">
+      <h3>M.Mounika</h3>
+      <p>Lab Technician</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Computer Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+     CSE Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>T.Ramarao</h3>
+      <p>HOD-AI & Vice Principal</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 2">
+      <h3>K.Monica</h3>
+      <p>HOD-CME & CCN</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>CH.Ashok</h3>
+      <p>Assistant Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Ram Sai</h3>
+      <p>Assistant Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>U.Lakshman</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Bhaskar Durga</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>P.Surendra Nadh</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>J.Uday Keerthi</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Sumalatha</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>J.Madhuri Kuamari</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Satya Annapurna</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 3">
+      <h3>B.Anusha</h3>
+      <p>Professor</p>
+    </div>
+  </div>
+</div>
+
+<!-- ECE Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+    ECE Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>E.Saroja</h3>
+      <p>HOD-ECE</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>S.Satish Kumar</h3>
+      <p>Assistant Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>S.Venkateswara Rao</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>CH.Ganapathi Pullaji</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>P.Sunitha</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 2">
+      <h3>T.Satya Ramdevi</h3>
+      <p>Professor</p>
+    </div>
+  </div>
+</div>
+
+<!-- EEE Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+    EEE Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>Revathi Devi</h3>
+      <p>HOD-EEE</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>P.V.K.Manohar</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Suresh</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>M.S.N.Chakra Varthi Prasad</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>CH.Abhishek Danthi</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>T.Sai Krishna</h3>
+      <p>Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 2">
+      <h3>K.Vijay Kumar</h3>
+      <p>Professor</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Mechanical Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+    Mechanical Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>M.Siva Kumar</h3>
+      <p>Assistant Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>L.Lova Raju</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>S.K.Meer Saisha</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>P.Kalayani</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>N.S.J.Prasanna Kumar</h3>
+      <p>Professor</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>B.Srinivas Rao</h3>
+      <p>Professor</p>
+    </div>
+  </div>
+</div>
+<!--Mining Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+    Mining Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>M.Hari Surya Vardhan</h3>
+      <p>Assistant Professor</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>Y.Naveen</h3>
+      <p>Assistant Professor</p>
+    </div>
+    </div>
+    </div>
+
+
+
+  <!-- Other Department -->
+<div class="department">
+  <div class="department-header" onclick="toggleFaculty(this)">
+     Other Faculties
+    <span>+</span>
+  </div>
+  <div class="faculty-list">
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>B.Raghu Ram</h3>
+      <p>Librarian</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>G.Rasajna</h3>
+      <p>Library Assistant</p>
+    </div>
+      <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>G.Narayanarao</h3>
+      <p>Superintendent</p>
+    </div>
+      <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>T.Bhavani</h3>
+      <p>Superintendent Assistant</p>
+    </div>
+      <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>S.Parandhama</h3>
+      <p>Junior Assistant</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>A.Mahesh</h3>
+      <p>Junior Assistant</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>K.Divya</h3>
+      <p>Junior Assistant</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>P.Trimurthulu</h3>
+      <p>Attender</p>
+    </div>
+     <div class="faculty">
+      <img src="emty.png" alt="Faculty 1">
+      <h3>S.Vijaya Lakshmi</h3>
+      <p>Attender</p>
+    </div>
+    <div class="faculty">
+      <img src="emty.png" alt="Faculty 2">
+      <h3>T.Lova Kumari</h3>
+      <p>Attender</p>
+    </div>
+  </div>
+</div><br>
+
+<!-- 🔹 Quick Links Box -->
+<div class="quick-links-section">
+    <h2 id="quick-links">
+      Quick Links</h2>
+    <ul>
+        <li><a href="https://apsbtet.net/studentportal/screens/mainstudentinfo.aspx">.Student Portal</a></li>
+        <li><a href="https://sbtet.ap.gov.in/APSBTET/">.Sbtet</a></li>
+        <li><a href="https://giet.campx.in/gier/payments/public/login">.Fee Payment</a></li>
+    </ul>
+</div>
+
+  <section id="paper-box"></section>
+  <div class="paper-box">
+    <h4>Previous Question  Papers All Branches</h4>
+    <button onclick="window.open('All Papers.html')">Open</button>
+  </div>
+<br>
+
+<script>
+function toggleFaculty(header) {
+  const list = header.nextElementSibling;
+  const allLists = document.querySelectorAll('.faculty-list');
+  const allHeaders = document.querySelectorAll('.department-header span');
+
+  allLists.forEach((item, i) => {
+    if (item !== list) item.classList.remove('active');
+  });
+
+  // Toggle this department
+  list.classList.toggle('active');
+
+  // Update the + / - sign
+  allHeaders.forEach(s => s.textContent = '+');
+  if (list.classList.contains('active')) {
+    header.querySelector('span').textContent = '−';
+  }
+}
+</script>
+         
+    <br>
+       <footer>
+            
+<!-- Social Icons -->
+<div class="social-footer">
+  <a class="insta-icon" href="https://www.instagram.com/ggu.ap?igsh=OGV0a3J1amNnZGRk">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a class="fb-icon" href="https://www.facebook.com/share/16ZdNzAVWt/" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a class="wa-icon" href=" https://whatsapp.com/channel/0029VatGxqC65yDCYVVuyq0L" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+         <small>© ²⁰²⁵ ᴳᴵᴱᵀ ᴾᵒˡʸᵗᵉᶜʰⁿⁱᶜ ᶜᵒˡˡᵉᵍᵉ.  ᴬˡˡ ʳⁱᵍʰᵗˢ ʳᵉˢᵉʳᵛᵉᵈ.<br> ᴰᵉˢⁱⁿᵉᵈ & ᴰᵉᵛᵉˡᵒᵖᵉᵈ ᴮʸ&nbsp;&nbsp;&nbsp;</small><b style="color:red;">ᴺᵃᵍᵃ 𝐒ᴬᴵ</b>
+
+             </footer>
+             
+             
+  <script>
+   
+    const sideNav = document.getElementById('sideNav');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    // Open menu
+    function openMenu() {
+      sideNav.classList.add('open');
+    }
+
+    // Close menu
+    function closeMenu() {
+      sideNav.classList.remove('open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!sideNav.contains(event.target) && !menuIcon.contains(event.target)) {
+        sideNav.classList.remove('open');
+      }
+    });
+  </script>
+
+
+              </body> 
+              </html>

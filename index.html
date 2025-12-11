@@ -1,0 +1,141 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+ <head> 
+ <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>GIET Polytechnic College(295)</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   </head> 
+   <body>
+    <center><img src="giet2.jpeg" width="400" hieght="200"></center>
+   <header>
+    <nav> <a href="index.html">Home</a>
+     <a href="departments.html">Departments</a> 
+     <a href="Class.html">About</a>
+     </nav>
+      </header>
+        <marquee scroll amount="19" direction="left">**Welcome To GIET Polytechnic College** </marquee>
+        <div class="slideshow"><div class="slides">
+          <center>
+       <img src="giet4.jpeg" hieght="400" width="400">
+        <img src="slide2.jpeg"hieght="300" width="400">
+        <img src="slide3.jpg" hieght="200" width="360">
+        
+        <img src="slide4.jpg" hieght="400" width="360">
+        </center>
+        </div></div><section> <big>Empowering students for a better future...<br>
+       GIET Polytechnic College is dedicated to providing quality technical education and shaping students into skilled professionals. With modern infrastructure, experienced faculty, and industry-driven training, we prepare students for successful careers in engineering and technology. 
+            GIET polytechnic college was established in 2009 to offer engineering education of world-class standards. Over the years, the college has come a long way to gain a place of repute and a preferred destination for quality engineering education. Located in the serene and sylvan suburbs of Chaitanya Nagar, Rajahmundry on NH-16, the sprawling 300-acre campus of GIET campus reflects the finest educational facilities around. The stately 5-storeyed structure set amid idyllic setting ensures a most congenial atmosphere for scholastic pursuit in right earnest. An ISO-certified,NBA-accredited and NAAC-A Grade accredited institution, GIET has many distinctions to its credit.</big></section>
+       <h2>Main Pillors Of College</h2>
+         <center><div class="circle-div"></div>
+         <small style="color:blue">Pricipal </small></center>
+      <br>
+       <b><center>Dr.P.G.Ramanujan</center></b><center><small>~MBA,M-TECH,PHD,BE.</small></center><br>
+       
+       <center><div class="Circle-div"></div>
+         <small style="color:blue"> Vice Pricipal </small></center>
+      <br>
+       <b><center>T.Ramarao</center></b><center><small>~M-TECH</small></center><br><br>
+       
+        <center><div class="circle-Div"></div>
+         <small style="color:blue">Administration Vice Pricipal </small></center>
+      <br>
+       <b><center>Dr.B.Kiran Babu</center></b><center><small>~B-TECH,M-TECH,PHD.</small></center><br>
+       
+        <div class="image-container">
+          <img src="bg.jpg">
+          <div class="text-box">
+            <small>IMPORTANT FACTS</small><br><br><br>
+      <span><p style="color:orange;">Established in
+</p><center><p>2012</p></center><center><sub style="color:gray;">13 years+ Experience</sub></center><br></span>
+     <span1><p style="color:yellow;">Students
+2500+</p><br></span1><span2><big style="color:orange;">Courses</big><br><br>
+     <centr>9</centr><br><small style="color:gray;">
+Courses are available</small><br><br></span2><span3><p style="color:orange;">Total Faculty
+</p><p>50+</p>
+<small style="color:gray;">Experienced Faculty
+</small></span3>
+
+        </div></div><br>
+        
+        <br><center>
+           <div class="map-box">
+               <h2>📍 Our College Location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.2589936800023!2d81.8683174!3d17.059979599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a379f6221208cd9%3A0xd719ebacd3af5c58!2sGodavari%20Global%20University!5e0!3m2!1sen!2sin!4v1761818595685!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center></div>
+        <br><br>
+    
+  
+         
+  <!-- 🔹 Popup -->
+  <div class="popup-bg" id="popupBg">
+    <div class="popup-box">
+      <div class="popup-overlay"></div>
+      <button class="close-btn" id="closeBtn">×</button>
+      <div class="popup-content">
+        <h2>Fill The Details</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="7d6fd087-fdcf-4a44-8302-ff52f6db706d">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <textarea name="message" rows="3" placeholder="Your Message"></textarea>
+          <button type="submit">𝑺𝒆𝒏𝒅 𝑫𝒆𝒕𝒂𝒊𝒍𝒔 ➪</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popupBg = document.getElementById('popupBg');
+    const closeBtn = document.getElementById('closeBtn');
+    const contactForm = document.getElementById('contactForm');
+
+    // ✅ Show popup once per session
+    window.addEventListener('load', () => {
+      if (!sessionStorage.getItem('popupShown')) {
+        popupBg.classList.add('show');
+        sessionStorage.setItem('popupShown', 'true');
+      }
+    });
+
+    // ✅ Close popup
+    closeBtn.addEventListener('click', () => popupBg.classList.remove('show'));
+    popupBg.addEventListener('click', e => {
+      if (e.target === popupBg) popupBg.classList.remove('show');
+    });
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert("✅ Thank you! Your message has been sent.");
+      popupBg.classList.remove('show');
+      contactForm.reset();
+    });
+     </script>
+  
+        <footer>
+
+<!-- Social Icons -->
+<div class="social-footer">
+  <a class="insta-icon" href="https://www.instagram.com/ggu.ap?igsh=OGV0a3J1amNnZGRk" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a class="fb-icon" href="https://www.facebook.com/share/16ZdNzAVWt/" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a class="wa-icon" href=" https://whatsapp.com/channel/0029VatGxqC65yDCYVVuyq0L" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+       <small>© ²⁰²⁵ ᴳᴵᴱᵀ ᴾᵒˡʸᵗᵉᶜʰⁿⁱᶜ ᶜᵒˡˡᵉᵍᵉ.  ᴬˡˡ ʳⁱᵍʰᵗˢ ʳᵉˢᵉʳᵛᵉᵈ.<br> ᴰᵉˢⁱⁿᵉᵈ & ᴰᵉᵛᵉˡᵒᵖᵉᵈ ᴮʸ&nbsp;&nbsp;&nbsp;</small><b style="color:red;">ᴺᵃᵍᵃ 𝐒ᴬᴵ</b>
+
+       
+         </footer>
+         <script>const scriptURL ="https://script.google.com/macros/s/AKfycbwRxEczF4Hq_PhQQcojBtaDXhXKaXJw0RGZgPIadj8nWucLYGHPFnUdJXAJGyqk3gOf8w/exec";
+ document.getElementById("contactForm").addEventListener("submit", function(e){ e.preventDefault(); const formData = { Name: this.Name.value, Email: this.Email.value, PhoneNumber: this.PhoneNumber.value, Message: this.Message.value }; fetch(scriptURL, { method: "POST", body: JSON.stringify(formData) }) .then(res => alert("Submitted!")) .catch(err => alert("Error: " + err)); });</script>
+        </body> 
+        </html>
+      
