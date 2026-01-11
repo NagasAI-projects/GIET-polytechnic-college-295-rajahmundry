@@ -868,3 +868,49 @@ iframe {
     justify-content: center;
   }
 }
+
+
+
+
+
+.popup-bg {
+  position: fixed;
+  inset: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  margin: 0;
+  width: 90%;
+  max-width: 420px;
+  min-height: 520px;
+
+
+/* ===============================
+   IMPORTANT FACTS CENTER FIX
+================================ */
+
+@media (min-width: 1025px) {
+
+  .important-facts {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .important-facts h2 {
+    font-size: 28px;
+  }
+
+  .important-facts p,
+  .important-facts li {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+}
