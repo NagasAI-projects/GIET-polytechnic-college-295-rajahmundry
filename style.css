@@ -914,3 +914,34 @@ iframe {
   }
 
 }
+
+
+
+  /* ===============================
+   POPUP CLOSE BUTTON FIX
+================================ */
+
+/* Overlay clicks allow, but button must be on top */
+.popup-overlay {
+  pointer-events: none;
+}
+
+/* Close button always top */
+.close-btn {
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+
+  /* ===============================
+   SLIDESHOW BIGGER (SYSTEM ONLY)
+================================ */
+
+@media (min-width: 1025px) {
+
+  .slideshow {
+    max-width: 600px;   /* before 400px */
+    aspect-ratio: 16 / 9;
+  }
+
+}
