@@ -66,7 +66,59 @@ Courses are available</small><br><br><br></span2><span3><p style="color:orange;"
                <h2>📍 Our College Location</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.2589936800023!2d81.8683174!3d17.059979599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a379f6221208cd9%3A0xd719ebacd3af5c58!2sGodavari%20Global%20University!5e0!3m2!1sen!2sin!4v1761818595685!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center></div>
         <br><br>
-   
+
+    <!-- 🔹 Popup -->
+<div class="popup-bg" id="popupBg">
+<div class="popup-box">
+<div class="popup-overlay"></div>
+<button class="close-btn" id="closeBtn">×</button>
+<div class="popup-content">
+<h2>Fill The Details</h2>
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="7d6fd087-fdcf-4a44-8302-ff52f6db706d">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<textarea name="message" rows="3" placeholder="Your Message"></textarea>
+<button type="submit">𝑺𝒆𝒏𝒅 𝑫𝒆𝒕𝒂𝒊𝒍𝒔 ➪</button>
+</form>
+</div>
+</div>
+</div>
+
+<script>
+const popupBg = document.getElementById('popupBg');
+const closeBtn = document.getElementById('closeBtn');
+const contactForm = document.getElementById('contactForm');
+
+// ✅ Show popup once per session
+window.addEventListener('load', () => {
+if (!sessionStorage.getItem('popupShown')) {
+popupBg.classList.add('show');
+sessionStorage.setItem('popupShown', 'true');
+}
+});
+
+closeBtn.onclick = () => {
+popupBg.classList.remove("show");
+};
+
+popupBg.onclick = (e) => {
+if(e.target === popupBg){
+popupBg.classList.remove("show");
+}
+};
+
+
+contactForm.addEventListener('submit', (e) => {
+e.preventDefault();
+alert("✅ Thank you! Your message has been sent.");
+popupBg.classList.remove('show');
+contactForm.reset();
+});
+</script>
+
+
   
         <footer>
 
