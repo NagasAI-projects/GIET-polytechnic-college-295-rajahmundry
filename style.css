@@ -966,3 +966,33 @@ iframe {
   }
 }
 
+/* ===============================
+   POPUP CLOSE BUTTON FIX
+================================ */
+
+#popupBg {
+  pointer-events: auto;
+}
+
+#popupBg::before {
+  pointer-events: none;
+}
+
+.popup-overlay {
+  pointer-events: none;
+}
+
+.popup-box {
+  position: relative;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+  pointer-events: auto;
+  cursor: pointer;
+}
