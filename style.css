@@ -22,28 +22,28 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.6);
-      display:none;
+      display: none;
+      align-items: center;
       justify-content: center;
-  align-items: center;
-      z-index:999;
-      padding:15px;
-      
+      z-index: 1000;
+      padding: 15px;
     }
+    .popup-bg.show { display: flex; }
 
     /* 🔹 Popup box with animation + background */
     .popup-box {
-        margin: 0;
      position:relative;      background: url('giet.jpeg') center/cover no-repeat;
      width:90%;
-      max-width: 420px;
-      min-height: 520px;
+      max-width: 400px;
+      min-height: 500px;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       /* 👇 Add animations here */
       animation: popupZoom 0.6s ease-out, glowBorder 3s infinite alternate;
-      .popup-bg.show { display: flex; }
-       pointer-events: none; /* 👈 THIS LINE ADD */
     }
 
     /* 🔹 Dark overlay for readability */
@@ -51,8 +51,6 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.55);
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
     }
 
     /* 🔹 Close button */
@@ -63,14 +61,12 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       background: #ff3b3b;
       color: white;
       border: none;
-      display:flex;
-      justify-content:center;
-      align-items:center;
       border-radius: 50%;
       width: 30px;
       height: 30px;
       font-size: 18px;
       cursor: pointer;
+      z-index: 3;
     }
 
     /* 🔹 Form content */
@@ -117,6 +113,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
     button[type="submit"]:hover {
       background: #005fcc;
     }
+
 
     /* 🔹 Animation keyframes */
     @keyframes popupZoom {
@@ -874,25 +871,6 @@ iframe {
   }
 }
 
-
-
-
-
-.popup-bg {
-  position: fixed;
-  inset: 0;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-box {
-  margin: 0;
-  width: 90%;
-  max-width: 420px;
-  min-height: 520px;
-
-
 /* ===============================
    IMPORTANT FACTS CENTER FIX
 ================================ */
@@ -969,33 +947,3 @@ iframe {
   }
 }
 
-/* ===============================
-   POPUP CLOSE BUTTON FIX
-================================ */
-
-#popupBg {
-  pointer-events: auto;
-}
-
-#popupBg::before {
-  pointer-events: none;
-}
-
-.popup-overlay {
-  pointer-events: none;
-}
-
-.popup-box {
-  position: relative;
-  pointer-events: auto;
-  z-index: 9999;
-}
-
-#closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10000;
-  pointer-events: auto;
-  cursor: pointer;
-}
