@@ -101,11 +101,17 @@ Courses are available</small><br><br><br></span2><span3><p style="color:orange;"
       }
     });
 
-    // ✅ Close popup
-    closeBtn.addEventListener('click', () => popupBg.classList.remove('show'));
-    popupBg.addEventListener('click', e => {
-      if (e.target === popupBg) popupBg.classList.remove('show');
-    });
+     closeBtn.onclick = () => {
+    popupBg.classList.remove("show");
+  };
+
+  popupBg.onclick = (e) => {
+    if(e.target === popupBg){
+      popupBg.classList.remove("show");
+    }
+  };
+
+    
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       alert("✅ Thank you! Your message has been sent.");
