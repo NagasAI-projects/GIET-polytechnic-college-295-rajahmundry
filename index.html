@@ -108,8 +108,9 @@ if(e.target === popupBg){
 popupBg.classList.remove("show");
 }
 };
-
-
+ document.getElementById("closeBtn").addEventListener("click", function () {
+    document.getElementById("popupBg").style.display = "none";
+  });
 contactForm.addEventListener('submit', (e) => {
 e.preventDefault();
 alert("✅ Thank you! Your message has been sent.");
