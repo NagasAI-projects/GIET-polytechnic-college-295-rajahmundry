@@ -66,57 +66,7 @@ Courses are available</small><br><br><br></span2><span3><p style="color:orange;"
                <h2>📍 Our College Location</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.2589936800023!2d81.8683174!3d17.059979599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a379f6221208cd9%3A0xd719ebacd3af5c58!2sGodavari%20Global%20University!5e0!3m2!1sen!2sin!4v1761818595685!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center></div>
         <br><br>
-    <div id="popupBg" class="popup-bg">
-
-  <div class="popup-border">
-    <div class="popup-box">
-
-      <button id="closeBtn">✕</button>
-
-      <div class="popup-content">
-        <h2>Contact GIET Polytechnic</h2>
-
-        <form id="contactForm">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-  const popupBg = document.getElementById("popupBg");
-  const closeBtn = document.getElementById("closeBtn");
-  const form = document.getElementById("contactForm");
-
-  /* 🔥 ALWAYS SHOW POPUP (even after refresh) */
-  popupBg.classList.add("show");
-
-  closeBtn.onclick = () => {
-    popupBg.classList.remove("show");
-  };
-
-  popupBg.onclick = (e) => {
-    if(e.target === popupBg){
-      popupBg.classList.remove("show");
-    }
-  };
-
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you!");
-    popupBg.classList.remove("show");
-    form.reset();
-  };
-
-});
-  
+   
   
         <footer>
 
