@@ -226,112 +226,163 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       35%  { opacity: 0; }
       100% { opacity: 0; }
     }
- 
- 
-  .image-container{
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Poppins', sans-serif;
-    }
+ /* ===== IMAGE + TEXT OVERLAY FINAL FIX ===== */
 
-    .image-container {
-      position: relative;
-      width: 99%;
-      max-width: 800px;
-    }
-
-    .image-container img {
-      width: 95%;
-      height: auto;
-      border-radius: 15px;
-      opacity: 0.85;
-    }
-
-    .text-box {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: white;
-      font-weight: bold;
-    }
-
-    .text-box span {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 10px;
-      transition: all 0.4s ease; /* smooth hover effect */
-    }
-  
-
-    /* 🌈 Hover Effect */
-    .text-box span:hover {
-      color: ;             /* change text color */
-      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
-      transform: scale(1.1);      /* slightly bigger */
-      cursor: pointer;
-    }
-    
-    
-  .text-box span1 {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 10px;
-      transition: all 0.4s ease; /* smooth hover effect */
-    }
-  
-
-    /* 🌈 Hover Effect */
-    .text-box span1:hover {
-      color: ;             /* change text color */
-      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
-      transform: scale(1.1);      /* slightly bigger */
-      cursor: pointer;
-    }
-    
-     .text-box span2{
-      display: block;
-      font-size: 15px;
-      margin-bottom: 10px;
-      transition: all 0.4s ease; /* smooth hover effect */
-    }
-  
-
-    /* 🌈 Hover Effect */
-    .text-box span2:hover {
-      color: ;             /* change text color */
-      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
-      transform: scale(1.1);      /* slightly bigger */
-      cursor: pointer;
-    }
-    
-     .text-box span3{
-      display: block;
-      font-size: 15px;
-      margin-bottom: 10px;
-      transition: all 0.4s ease; /* smooth hover effect */
-    }
-  
-
-    /* 🌈 Hover Effect */
-    .text-box span3:hover {
-      color: ;             /* change text color */
-      text-shadow: 0 0 10px g0 0 20px ; /* glowing effect */
-      transform: scale(1.1);      /* slightly bigger */
-      cursor: pointer;
-    }
-  @media (max-width: 768px) {
-    .image-container{
-        font-size: 25px;
-    }
-  .text-box{
-        margin-top: 40px;
-    }
+.image-container{
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
 }
+
+/* image layer */
+.image-container img{
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;          /* 👈 image layer */
+}
+
+/* text overlay */
+.text-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+
+  color: white;
+  padding: 20px;
+
+  z-index: 2;          /* 👈 text above image */
+  pointer-events: auto;
+}
+
+/* IMPORTANT FACTS heading */
+.text-box top {
+  position: absolute;        /* absolute positioning */
+  top: 15px;                 /* top distance from image */
+  left: 50%;                 /* horizontal center */
+  transform: translateX(-50%); /* exact center */
+  
+  font-weight: 900;          /* bold */
+  font-size: 28px;           /* visible */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  z-index: 5;                /* on top of image */
+  margin: 0;          
+}
+
+/* fact blocks */
+.text-box span,
+.text-box span1,
+.text-box span2,
+.text-box span3{
+   
+  font-weight: 700;          /* bold */
+  font-size: 18px;           /* visible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* hover pop */
+.text-box span:hover,
+.text-box span1:hover,
+.text-box span2:hover,
+.text-box span3:hover{
+  transform: translateY(-10px) scale(1.08);
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* desktop */
+@media(min-width:1025px){
+  .text-box{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:1024px){
+  .text-box{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* mobile */
+@media(max-width:600px){
+  .text-box{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== FIRST FACT ORDER FIX (FINAL) ===== */
+
+.text-box{
+  grid-auto-flow: row;     /* force row order */
+}
+
+/* force heading full row */
+.text-box small{
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+/* explicitly place facts */
+.text-box span{
+  grid-column: 1;
+}
+.text-box span1{
+  grid-column: 2;
+}
+.text-box span2{
+  grid-column: 3;
+}
+.text-box span3{
+  grid-column: 4;
+}
+
+/* ===== ALL FACTS PERFECT CENTER FIX ===== */
+
+.text-box{
+  display: grid;
+  place-items: center;      /* 🔥 both horizontal & vertical center */
+  align-content: center;    /* 🔥 group center lo untundhi */
+}
+
+/* make each fact center aligned */
+.text-box span,
+.text-box span1,
+.text-box span2,
+.text-box span3{
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+
+/* tablet fix */
+@media(max-width:1024px){
+  .text-box span,
+  .text-box span1,
+  .text-box span2,
+  .text-box span3{
+    grid-column: auto;   /* let grid handle naturally */
+  }
+}
+
+
      .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
