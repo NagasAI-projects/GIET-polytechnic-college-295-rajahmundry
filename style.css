@@ -324,8 +324,14 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       transform: scale(1.1);      /* slightly bigger */
       cursor: pointer;
     }
-    
-    
+  @media (max-width: 768px) {
+    .image-container{
+        font-size: 25px;
+    }
+  .text-box{
+        margin-top: 40px;
+    }
+}
      .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
