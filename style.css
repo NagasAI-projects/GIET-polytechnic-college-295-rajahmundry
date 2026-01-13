@@ -245,6 +245,28 @@ height:auto;
   z-index: 1;          /* 👈 image layer */
 }
 
+/* desktop */
+@media(min-width:1025px){
+  .image-container img{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:1024px){
+  .image-container img{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* mobile */
+@media(max-width:600px){
+  .image-container img{
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* text overlay */
 .text-box{
   position: absolute;
