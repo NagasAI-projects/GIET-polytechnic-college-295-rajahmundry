@@ -266,31 +266,9 @@ height:auto;
   }
 }
 
-
-/* text overlay */
-.text-box{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height:auto;
-
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-
-  color: white;
-  padding: 20px;
-
-  z-index: 2;          /* 👈 text above image */
-  pointer-events: auto;
-}
-
+  
 /* IMPORTANT FACTS heading */
-.text-box top {
-  position: absolute;        /* absolute positioning */
-  top: 15px;                 /* top distance from image */
+.text-box pop {       /* absolute positioning */               /* top distance from image */
   left: 50%;                 /* horizontal center */
   transform: translateX(-50%); /* exact center */
   
@@ -298,25 +276,86 @@ height:auto;
   font-size: 28px;           /* visible */
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #e4e41e;
   z-index: 5;                /* on top of image */
   margin: 0;          
 }
 
-/* fact blocks */
-.text-box span,
-.text-box span1,
-.text-box span2,
-.text-box span3{
-   
-  font-weight: 700;          /* bold */
-  font-size: 18px;           /* visible */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
+
+    .text-box {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .text-box span {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: all 0.4s ease; /* smooth hover effect */
+    }
+  
+
+    /* 🌈 Hover Effect */
+    .text-box span:hover {
+      color: ;             /* change text color */
+      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
+      transform: scale(1.1);      /* slightly bigger */
+      cursor: pointer;
+    }
+    
+    
+  .text-box span1 {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: all 0.4s ease; /* smooth hover effect */
+    }
+  
+
+    /* 🌈 Hover Effect */
+    .text-box span1:hover {
+      color: ;             /* change text color */
+      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
+      transform: scale(1.1);      /* slightly bigger */
+      cursor: pointer;
+    }
+    
+     .text-box span2{
+      display: block;
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: all 0.4s ease; /* smooth hover effect */
+    }
+  
+
+    /* 🌈 Hover Effect */
+    .text-box span2:hover {
+      color: ;             /* change text color */
+      text-shadow: 0 0 10px g, 0 0 20px ; /* glowing effect */
+      transform: scale(1.1);      /* slightly bigger */
+      cursor: pointer;
+    }
+    
+     .text-box span3{
+      display: block;
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: all 0.4s ease; /* smooth hover effect */
+    }
+  
+
+    /* 🌈 Hover Effect */
+    .text-box span3:hover {
+      color: ;             /* change text color */
+      text-shadow: 0 0 10px g0 0 20px ; /* glowing effect */
+      transform: scale(1.1);      /* slightly bigger */
+      cursor: pointer;
+    }
 
 /* hover pop */
 .text-box span:hover,
@@ -348,50 +387,6 @@ height:auto;
   .text-box{
     grid-template-columns: 1fr;
   }
-}
-
-/* ===== FIRST FACT ORDER FIX (FINAL) ===== */
-
-.text-box{
-  grid-auto-flow: row;     /* force row order */
-}
-
-/* force heading full row */
-.text-box small{
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
-/* explicitly place facts */
-.text-box span{
-  grid-column: 1;
-}
-.text-box span1{
-  grid-column: 2;
-}
-.text-box span2{
-  grid-column: 3;
-}
-.text-box span3{
-  grid-column: 4;
-}
-
-/* ===== ALL FACTS PERFECT CENTER FIX ===== */
-
-.text-box{
-  display: grid;
-  place-items: center;      /* 🔥 both horizontal & vertical center */
-  align-content: center;    /* 🔥 group center lo untundhi */
-}
-
-/* make each fact center aligned */
-.text-box span,
-.text-box span1,
-.text-box span2,
-.text-box span3{
-  justify-self: center;
-  align-self: center;
-  text-align: center;
 }
 
 
