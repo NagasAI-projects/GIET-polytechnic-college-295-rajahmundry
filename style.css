@@ -238,6 +238,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
       position: relative;
       width: 99%;
       max-width: 800px;
+    left:50%;
     }
 
     .image-container img {
@@ -249,7 +250,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
     
     
 /* IMPORTANT FACTS heading */
-.text-box pop {       /* absolute positioning */               /* top distance from image */
+.text-box n{       /* absolute positioning */               /* top distance from image */
   left: 50%;                 /* horizontal center */
   transform: translateX(-50%); /* exact center */
   
