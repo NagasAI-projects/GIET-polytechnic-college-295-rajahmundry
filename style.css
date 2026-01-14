@@ -230,14 +230,11 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
  
   .image-container{
       margin: 0;
-      height: 100vh;
+      height:auto;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Poppins', sans-serif;
-    }
-
-    .image-container {
       position: relative;
       width: 99%;
       max-width: 800px;
