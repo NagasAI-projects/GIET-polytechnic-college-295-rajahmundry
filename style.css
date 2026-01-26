@@ -640,6 +640,29 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0;
     }
    
    
+   /*---ALL CURRICULAMS---*/
+    .paper-box0{
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+       border: 1px solid green;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      text-align: center;
+      display: inline-block;
+      width: 220px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
    
 /* --- Quick Links Section Box --- */
 .quick-links-section {
