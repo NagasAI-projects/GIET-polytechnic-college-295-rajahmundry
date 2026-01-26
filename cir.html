@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSE Curriculum</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Icons -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+  background:#0f0f0f;
+  color:white;
+}
+
+/* ===== CONTAINER ===== */
+.curriculum{
+  max-width:900px;
+  margin:50px auto;
+  padding:20px;
+  text-align:center;
+}
+
+.curriculum h2{
+  color:#ff9800;
+  margin-bottom:25px;
+}
+
+/* ===== DROPDOWN ===== */
+select{
+  padding:10px 15px;
+  font-size:16px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  margin-bottom:30px;
+}
+
+/* ===== SEM CARD ===== */
+.sem-card{
+  background:#1c1c1c;
+  padding:18px;
+  margin:15px 0;
+  border-radius:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.sem-name{
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:25px;
+  font-size:15px;
+  transition:0.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.preview{
+  background:#333;
+  color:white;
+}
+
+.preview:hover{
+  background:#444;
+}
+
+.download{
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  color:white;
+}
+
+.download:hover{
+  transform:scale(1.1);
+}
+
+/* ===== PDF PREVIEW ===== */
+iframe{
+  width:100%;
+  height:500px;
+  border:none;
+  border-radius:15px;
+  margin-top:20px;
+  display:none;
+  background:white;
+}
+small{
+  background-color: white;
+  color: black;
+}
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .sem-card{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="curriculum">
+  <h2>All Branchs Curriculums</h2>
+
+  <!-- DROPDOWN -->
+  <select onchange="showSemester(this.value)">
+    <option value="">Select Branch</option>
+    <option value="AI">Artificial Intelligence</option>
+    <option value="AM">Auto Mobile</option>
+    <option value="CCN">Computer Networks</option>
+    <option value="Civil">Civil Engineering</option>
+      <option value="CME">Computer Engineering</option>
+      <option value="ECE">Electronics  Engineering</option>
+      <option value="EEE">Electrical Engineering</option>
+      <option value="MECH">Mechanical Engineering</option>
+      <option value="MIN">Mining Engineering</option>
+  </select>
+
+  <!-- SEMESTERS -->
+  <div id="AI" class="sem-card" style="display:none">
+    <span class="sem-name">AI</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('AI-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="AI-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+  <div id="AM" class="sem-card" style="display:none">
+    <span class="sem-name">AM</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('AM-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="AM-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+
+  <div id="CCN" class="sem-card" style="display:none">
+    <span class="sem-name">CCN</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('CCN-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="CCN-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+  <div id="Civil" class="sem-card" style="display:none">
+    <span class="sem-name">CIVIL</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('CIVIL-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="CIVIL-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+  <div id="CME" class="sem-card" style="display:none">
+    <span class="sem-name">CME</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('CME-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="CME-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+  
+  <div id="ECE" class="sem-card" style="display:none">
+    <span class="sem-name">ECE</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('ECE-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="ECE-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+  <div id="EEE" class="sem-card" style="display:none">
+    <span class="sem-name">EEE</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('EEE-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="EEE-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+
+  <div id="MECH" class="sem-card" style="display:none">
+    <span class="sem-name">MECH</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('MECHANICAL-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="MECHANICAL-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+  <div id="MIN" class="sem-card" style="display:none">
+    <span class="sem-name">MIN</span>
+    <div>
+      <a class="btn preview" onclick="previewPDF('MINING-C23.pdf')">
+        <i class="fa-solid fa-eye"></i> Preview
+      </a>
+      <a class="btn download" href="MINING-C23.pdf" download>
+        <i class="fa-solid fa-download"></i> Download
+      </a>
+    </div>
+  </div>
+
+
+  <!-- PDF PREVIEW FRAME -->
+  <iframe id="pdfFrame"></iframe>
+
+  <br><br>
+  <a href="departments.html" style="color:#ff9800">⬅ Back to Departments</a>
+</section>
+<center><small><span style="color:red;">!Note:</span>This Curriculums are used for only C23 syllabus</small></center>
+
+<script>
+function showSemester(id){
+  document.querySelectorAll('.sem-card').forEach(s=>s.style.display='none');
+  document.getElementById('pdfFrame').style.display='none';
+  if(id) document.getElementById(id).style.display='flex';
+}
+
+function previewPDF(path){
+  const frame=document.getElementById('pdfFrame');
+  frame.src=path;
+  frame.style.display='block';
+  frame.scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
