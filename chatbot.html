@@ -228,6 +228,13 @@ body{
 
 </div>
 <script>
+const icon = document.getElementById("ask-sai-widget");
+const chat = document.getElementById("chat-container");
+
+icon.onclick = function() {
+  chat.style.display = "block";
+};
+
 
 /* ================= REPLIES DATABASE ================= */
 
@@ -439,6 +446,7 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
 
 
