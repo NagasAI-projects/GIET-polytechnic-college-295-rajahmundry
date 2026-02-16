@@ -87,8 +87,17 @@ body{
   100%{ transform:scale(1.05); }
   
 }
+  #askSaiChatbot * {
+  box-sizing: border-box;
+}
+
+#askSaiChatbot button {
+  font-family: Arial, sans-serif;
+}
+
 
 /* ================= CHAT WINDOW ================= */
+  
 
 #chat-container{
   display:none;
@@ -183,6 +192,7 @@ body{
 </head>
 <body>
 
+<div id="askSaiChatbot">
 <!-- ================= CHAT WINDOW ================= -->
 
 <div id="chat-container">
@@ -226,7 +236,7 @@ body{
     <img src="boticon.png" class="circle-icon" alt="Assistant">
 
 </div>
-
+</div>
 <script>
 
 /* ================= REPLIES DATABASE ================= */
@@ -439,4 +449,5 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
