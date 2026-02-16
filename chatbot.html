@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask sAI Chatbot</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6fb;
+}
+#ask-sai-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 170px;
+    cursor: pointer;
+}
+
+/* 🔥 Circle Icon */
+.circle-icon {
+    position: absolute;
+    bottom: 20px;
+    left: -25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* 🔥 Bubble Image (Exact Overlay) */
+.ask-bubble {
+    position: absolute;
+    top: -30px;
+
+    right: -25px;
+    width: 140px;
+    z-index: 2;
+}
+
+/* ================= FLOATING ICON ================= */
+
+#ask-sai-widget{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  cursor:pointer;
+  animation:pulse 5s infinite;
+  z-index:9999;
+}
+
+.ask-avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:6px solid #3aa86d;
+  background:#3aa86d;
+  object-fit:cover;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.ask-tag{
+  position:absolute;
+  top:-40px;
+  right:-10px;
+  background:#f7b500;
+  color:#000;
+  font-weight:700;
+  font-size:14px;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+.ask-tag::after{
+  content:"";
+  position:absolute;
+  bottom:-8px;
+  right:25px;
+  border-width:8px;
+  border-style:solid;
+  border-color:#f7b500 transparent transparent transparent;
+}
+
+@keyframes pulse{
+  0%{ transform:scale(1); }
+  70%{ transform:scale(0.8); }
+  100%{ transform:scale(1.05); }
+  
+}
+
+/* ================= CHAT WINDOW ================= */
+
+#chat-container{
+  display:none;
+  position:fixed;
+  bottom:120px;
+  right:20px;
+  width:350px;
+  height:500px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.chat-header{
+  background:linear-gradient(135deg,#6a11cb,#2575fc);
+  color:#fff;
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chat-body{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  background:#f8fafc;
+}
+
+.user{
+  background:#2575fc;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:14px 14px 4px 14px;
+  margin:6px 0;
+  max-width:80%;
+  margin-left:auto;
+}
+
+.bot{
+  background:#e5e7eb;
+  padding:8px 12px;
+  border-radius:14px 14px 14px 4px;
+  margin:6px 0;
+  max-width:80%;
+}
+
+.chat-input{
+  display:flex;
+  border-top:1px solid #eee;
+}
+
+.chat-input input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+.chat-input button{
+  background:#2575fc;
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+/* Suggestions */
+.suggestions{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.suggestions button{
+  background:#eef2ff;
+  border:1px solid #c7d2fe;
+  padding:6px 10px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.suggestions button:hover{
+  background:#dbeafe;
+}
+</style>
+</head>
+<body>
+
+<!-- ================= CHAT WINDOW ================= -->
+
+<div id="chat-container">
+  <div class="chat-header">
+    <b>Ask sAI</b>
+    <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+
+    <div class="bot">Hello 👋 How can I help you?</div>
+
+    <div class="suggestions" id="suggestionsBox">
+      <button onclick="quickAsk('syllabus pdfs')">Syllabus PDFs</button>
+      <button onclick="quickAsk('notes')">Notes</button>
+      <button onclick="quickAsk('timetable')">Timetable</button>
+      <button onclick="quickAsk('previous papers')">Previous Papers</button>
+      <button onclick="quickAsk('about giet')">About GIET</button>
+      <button onclick="quickAsk('departments')">Departments</button>
+      <button onclick="quickAsk('admissions')">Admissions</button>
+      <button onclick="quickAsk('ecet')">ECET</button>
+      <button onclick="quickAsk('contact')">Contact</button>
+      <button onclick="quickAsk('website home')">Website Home</button>
+    </div>
+
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- ================= FLOATING ICON ================= -->
+
+<div id="ask-sai-widget" onclick="toggleChat()">
+   <!-- ASK sAI Bubble -->
+    <img src="ask sai.png" class="ask-bubble" alt="Ask sAI">
+
+    <!-- Circle Icon -->
+    <img src="boticon.png" class="circle-icon" alt="Assistant">
+
+</div>
+
+<script>
+
+/* ================= REPLIES DATABASE ================= */
+
+const replies = {
+
+  "hi": "Hi 👋 Welcome to GIET Polytechnic College Rajahmundry!",
+  "hello": "Hello 🙂 How can I help you today?",
+  "hai": "Hai 👋 Ask me anything about GIET.",
+  "good morning": "Good Morning ☀️ Have a great day at GIET!",
+  "good afternoon": "Good Afternoon 😊",
+  "good evening": "Good Evening 🌙",
+  "who are you": "I am Ask sAI 🤖 Virtual Assistant of GIET Polytechnic.",
+  "what is your name": "My name is Ask sAI 🤖",
+
+  "college location": "GIET Polytechnic College is located in Rajahmundry, Andhra Pradesh.",
+  "when established": "GIET Polytechnic College was established to provide quality technical education.",
+  "college type": "It is a diploma level polytechnic institution.",
+  "affiliation": "The college is affiliated to SBTET Andhra Pradesh.",
+
+  "courses": "Diploma courses are offered in CSE, ECE, Mechanical and Civil Engineering.",
+  "cse": "CSE department focuses on programming, AI, ML and software development.",
+  "ece": "ECE department covers electronics, communication systems and embedded systems.",
+  "mechanical": "Mechanical department deals with machines, thermodynamics and production.",
+  "civil": "Civil department focuses on construction, structures and surveying.",
+
+  "notes": "Subject-wise notes are available for all semesters.",
+  "lab manuals": "Lab manuals are available department-wise.",
+  "attendance": "Students must maintain minimum 75% attendance.",
+  "internal marks": "Internal marks are based on mid exams and assignments.",
+  "mid exams": "Mid exams are conducted twice per semester.",
+  "semester exams": "Semester exams are conducted by SBTET.",
+  "results": "Results are published on the official SBTET website.",
+  "grading system": "The college follows credit and grade based system.",
+  "academic calendar": "Academic calendar contains exam and holiday schedule.",
+
+  "polycet": "AP POLYCET is the entrance exam for diploma courses.",
+  "eligibility": "10th pass students are eligible for diploma admission.",
+  "fee structure": "Fee structure varies based on branch and category.",
+  "scholarship": "Government scholarships are available for eligible students.",
+  "documents required": "Students must submit SSC memo, caste, income and TC.",
+  "seat allotment": "Seats are allotted through online counseling process.",
+
+  "library": "The college has a well equipped library.",
+  "labs": "Modern laboratories are available for all departments.",
+  "computer lab": "High speed internet enabled computer labs are available.",
+  "sports": "Sports and games facilities are provided.",
+  "canteen": "Canteen facility is available inside campus.",
+  "wifi": "Campus provides internet facility.",
+  "hostel": "Hostel details can be obtained from office.",
+  "transport": "Transport facility is available for nearby areas.",
+
+  "placements": "Placement assistance is provided for final year students.",
+  "companies": "Companies visit campus for recruitment drives.",
+  "training": "Soft skills and technical training programs are conducted.",
+
+  "principal": "Principal oversees academic and administrative activities.",
+  "office timings": "Office works during regular college hours.",
+  "email": "Official email details are available in contact section.",
+
+  "thank you": "You're welcome 😊",
+  "thanks": "Happy to help 😄",
+  "bye": "Goodbye 👋 Have a nice day!",
+  "ok": "Alright 👍",
+  "help": "You can ask about admissions, syllabus, ECET, departments and more.",
+  "exam fee": "Exam fee details are notified before semester exams.",
+  "bonafide": "Bonafide certificates are issued by college office.",
+  "tc": "Transfer certificate is issued after course completion.",
+  "id card": "Students must carry ID card daily.",
+  "uniform": "Uniform is mandatory inside campus.",
+  "holiday list": "Holiday list is provided in academic calendar.",
+  "projects": "Final year students must complete academic project.",
+  "seminar": "Seminars are part of internal assessment.",
+  "industrial visit": "Industrial visits are organized for practical exposure.",
+  "nss": "NSS activities are conducted for social service.",
+  "anti ragging": "College follows strict anti-ragging rules.",
+  "ragging": "Ragging is strictly prohibited in campus.",
+  "discipline": "Students must follow college discipline rules.",
+  "vision": "Vision is to provide quality technical education.",
+  "mission": "Mission is to develop skilled diploma engineers.",
+  
+  "who developed you": "I was developed by Mr Naga Sai, a student of GIET Polytechnic College.",
+"who created you": "I was created by  Mr Naga Sai as a college chatbot project.",
+"who is Naga Sai": "Naga Sai is the developer of this Ask sAI chatbot.",
+"who is your developer": "My developer is Mr Naga Sai from GIET Polytechnic.",
+"who made this chatbot": "This chatbot was developed by Mr Naga Sai using HTML, CSS and JavaScript.",
+"developer name": "The developer of this chatbot is Naga Sai.",
+"about developer": "Mr Naga Sai is the creator of Ask sAI chatbot for GIET Polytechnic College website.",
+
+"are you ai": "I am a simple rule-based virtual assistant built using JavaScript.",
+"are you chatgpt": "No, I am Ask sAI, a custom chatbot developed for GIET Polytechnic.",
+"what technology used": "I was built using HTML, CSS and JavaScript.",
+"are you real person": "No 🙂 I am a virtual assistant chatbot.",
+"what can you do": "I can answer questions about admissions, departments, syllabus, ECET and college details.",
+"why were you created": "I was created to help students quickly get college information.",
+"when were you developed": "I was developed as a college project to assist students.",
+"can you learn": "Currently I respond based on predefined answers.",
+"are you smart": "I try my best to help you with accurate college information 🙂",
+
+
+  "syllabus": "You can download branch-wise syllabus PDFs from the Syllabus section.",
+  "timetable": "Latest timetable is available in the Timetable section.",
+  "previous papers": "Previous year question papers are available for practice.",
+  "about giet": "GIET Polytechnic College Rajahmundry offers diploma courses in engineering streams.",
+  "departments": "Departments available are CSE, ECE, Mechanical and Civil Engineering.",
+  "admissions": "Admissions are conducted through AP POLYCET counseling.",
+  "ecet": "ECET allows diploma students to enter B.Tech 2nd year directly.",
+  "ecet eligibility": "Diploma final year students are eligible for ECET.",
+  "ecet subjects": "ECET exam includes mathematics and core subjects.",
+  "ecet rank": "Better rank increases chances of good engineering college.",
+  "contact": "You can find official contact details in the Contact section.",
+  "website home": "Click on the Home option to return to the main website page."
+};
+
+/* 🔥 ENTER KEY SEND */
+document.addEventListener("DOMContentLoaded", function(){
+  const input = document.getElementById("userInput");
+  if(input){
+    input.addEventListener("keypress", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+  }
+});
+
+/* ================= CHAT LOGIC ================= */
+
+function toggleChat(){
+  const chat = document.getElementById("chat-container");
+  const widget = document.getElementById("ask-sai-widget");
+
+  if(chat.style.display === "flex"){
+    chat.style.display = "none";
+    widget.style.display = "block";
+  } else {
+    chat.style.display = "flex";
+    widget.style.display = "none";
+  }
+}
+
+function quickAsk(text){
+  const suggestions = document.getElementById("suggestionsBox");
+  if(suggestions) suggestions.style.display = "none";
+  addMessage(text);
+}
+
+function sendMessage(){
+  const input = document.getElementById("userInput");
+  const msg = input.value.trim();
+  if(msg === "") return;
+  addMessage(msg);
+  input.value = "";
+}
+
+function addMessage(msg){
+  smoothScroll();
+/* 🔥 SMOOTH AUTO SCROLL FUNCTION */
+function smoothScroll(){
+  const chatBody = document.getElementById("chatBody");
+  chatBody.scrollTo({
+    top: chatBody.scrollHeight,
+    behavior: "smooth"
+  });
+}
+
+
+  // Show user message
+  const userDiv = document.createElement("div");
+  userDiv.className = "user";
+  userDiv.innerText = msg;
+  chatBody.appendChild(userDiv);
+
+  // Smart reply matching
+  let message = msg.toLowerCase();
+  let reply = "Sorry, I didn't understand 🤔";
+
+  for(let key in replies){
+    if(message.includes(key)){
+      reply = replies[key];
+      break;
+    }
+  }
+
+  // 🔥 Typing indicator
+const typingDiv = document.createElement("div");
+typingDiv.className = "bot";
+typingDiv.innerText = "Typing...";
+chatBody.appendChild(typingDiv);
+smoothScroll();
+
+setTimeout(() => {
+  typingDiv.remove();
+
+  const botDiv = document.createElement("div");
+  botDiv.className = "bot";
+  botDiv.innerText = reply;
+  chatBody.appendChild(botDiv);
+
+  smoothScroll();
+
+}, 800);
+
+
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+</script>
+
+</body>
+</html>
