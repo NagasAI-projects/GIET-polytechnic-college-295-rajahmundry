@@ -95,11 +95,26 @@ body{
   font-family: Arial, sans-serif;
 }
 
+  /* Fix GitHub page CSS conflict */
+#chat-container button{
+  width:auto !important;
+  display:inline-block !important;
+}
+
+#chat-container input{
+  width:auto !important;
+}
+
+#chat-container div{
+  margin:0 !important;
+}
+
 
 /* ================= CHAT WINDOW ================= */
   
 
 #chat-container{
+  font-family: Arial, sans-serif;
   display:none;
   position:fixed;
   bottom:120px;
@@ -449,5 +464,6 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
 
